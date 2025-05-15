@@ -5,11 +5,19 @@
 This repository contains a working prototype of a one‑way, trust‑assumed bridge for a single ERC20 token (eSTR → pSTR) between Ethereum Holesky and Polygon Amoy testnets. Users lock native tokens on Ethereum and receive a minted representation on Polygon via a trusted off‑chain relayer.
 
 ## Table of Contents
+- [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
 - [Relayer](#relayer)
 - [Behavior](#behavior)
 - [Security & Trust Assumptions](#security-&-trust-assumptions)
 - [License](#license)
+
+## Project Structure
+- `contracts/` – Solidity smart contracts (`eSTR`, `pSTR`, `Bridge`, `Minter`).
+- `scripts/` – Deployment and utility scripts (e.g., `deployBridge.ts`, `deployMinter.ts`).
+- `relayer/` – Off-chain relayer that listens to Ethereum events and mints tokens on Polygon.
+- `addresses/` – Stores deployed contract addresses in JSON format, organized by network.
+- `.env.example` – Example of environment variables required to run the project.
 
 ## Prerequisites
 
