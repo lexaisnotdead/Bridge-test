@@ -8,6 +8,8 @@ contract eSTR is ERC20 {
         _mint(msg.sender, 10_000 ether);
     }
 
+    /// @notice Public mint function is exposed only for testing purposes.
+    ///         In production, this should be protected with proper access control.
     function mint(address to, uint256 amount) external {
         _mint(to, amount);
     }

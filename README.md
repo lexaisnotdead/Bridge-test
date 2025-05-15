@@ -39,6 +39,8 @@ npm run start     # or npx ts-node relayer/index.ts
     * Multi‑sig or threshold signatures
     * Cryptographic proof verification (e.g., Merkle proofs)
 
+* On the Ethereum Holesky testnet, the **eSTR** token contract includes a publicly callable **mint** function that can be accessed by anyone. This is intentional to allow users and reviewers to test the bridge and relayer without needing admin intervention.
+
 
 ## License
 This project is licensed under the [MIT License](./LICENSE)
