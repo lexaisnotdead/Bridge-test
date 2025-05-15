@@ -17,9 +17,9 @@ This repository contains a working prototype of a one‑way, trust‑assumed bri
 - `npm` or `yarn`  
 - Hardhat  
 - `.env` file with RPC URLs, keys, and API tokens  
-- SQLite3 (for inspecting `relayer.db`)
+- SQLite3 for inspecting `relayer.db` (or install the `SQLite Viewer` extension on VSCode)
 
-Create a .env in the project root from the example in the **env.example** file
+Create a .env in the project root from the example in the `env.example` file
 
 ## Relayer
 The relayer listens to BridgeDeposit events on Ethereum and calls mint(...) on Polygon:
@@ -39,7 +39,7 @@ npm run start     # or npx ts-node relayer/index.ts
     * Multi‑sig or threshold signatures
     * Cryptographic proof verification (e.g., Merkle proofs)
 
-* On the Ethereum Holesky testnet, the **eSTR** token contract includes a publicly callable **mint** function that can be accessed by anyone. This is intentional to allow users and reviewers to test the bridge and relayer without needing admin intervention.
+* On the Ethereum Holesky testnet, the `eSTR` token contract includes a publicly callable `mint` function that can be accessed by anyone. This is intentional to allow users and reviewers to test the bridge and relayer without needing admin intervention.
 
 
 ## License
