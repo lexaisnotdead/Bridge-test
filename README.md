@@ -19,7 +19,7 @@ This repository contains a working prototype of a one‑way, trust‑assumed bri
 - `.env` file with RPC URLs, keys, and API tokens  
 - SQLite3 (for inspecting `relayer.db`)
 
-Create a .env in the project root from the example in the env.example file
+Create a .env in the project root from the example in the **env.example** file
 
 ## Relayer
 The relayer listens to BridgeDeposit events on Ethereum and calls mint(...) on Polygon:
