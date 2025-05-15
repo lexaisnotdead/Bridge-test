@@ -37,7 +37,7 @@ async function processEvent(db: any, event: BridgeDepositEvent.Log, polyMinter: 
         await db.run('INSERT INTO processed_nonces (nonce) VALUES (?)', [nonce]);
         return;
     }
-  
+
     try {
         const tx = await polyMinter.mint(recipient, amount, nonce);
         await tx.wait();
@@ -45,12 +45,6 @@ async function processEvent(db: any, event: BridgeDepositEvent.Log, polyMinter: 
         await db.run('INSERT INTO processed_nonces (nonce) VALUES (?)', [nonce]);
     } catch (error) {
         console.error(`Error minting for nonce ${nonce}:`, error);
-        // Re-check if nonce is now used
-        const isUsedNow = await polyMinter.usedNonces(nonce);
-        if (isUsedNow) {
-            console.log(`Nonce ${nonce} was used after error, adding to db`);
-            await db.run('INSERT INTO processed_nonces (nonce) VALUES (?)', [nonce]);
-        }
     }
 }  
 
